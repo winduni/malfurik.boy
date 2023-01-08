@@ -1,0 +1,22 @@
+
+# BEGIN WordPress
+# Директивы (строки) между `BEGIN WordPress` и `END WordPress`
+# созданы автоматически и подлежат изменению только через фильтры WordPress.
+# Сделанные вручную изменения между этими маркерами будут перезаписаны.
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+Redirect 301 /register-3/ /reg
+</IfModule>
+
+# END WordPress
+# BEGIN WP Cloudflare Super Page Cache
+# Директивы (строки) между `BEGIN WP Cloudflare Super Page Cache` и `END WP Cloudflare Super Page Cache`
+# созданы автоматически и подлежат изменению только через фильтры WordPress.
+# Сделанные вручную изменения между этими маркерами будут перезаписаны.
+# END WP Cloudflare Super Page Cache
