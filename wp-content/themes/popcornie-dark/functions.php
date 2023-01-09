@@ -34,43 +34,13 @@ function ajax_fetch() {
 add_action('wp_ajax_data_fetch' , 'data_fetch');
 add_action('wp_ajax_nopriv_data_fetch','data_fetch');
 function data_fetch(){
-  /*  $search_term = isset(  $_POST['keyword']  ) ?  $_POST['keyword']  : '';
-
-    $posts = get_posts( array(
-        'posts_per_page' => 20,
-        'post_type' => array( 'movie' ),
-        's' => $search_term
-    ) );
-
-    $results = array();
-    echo '<ul>';
-    if( $posts ) {
-
-        foreach( $posts as $post ) {
-            $myquery = strtolower((esc_attr( $_POST['keyword'] )));
-            $search = strtolower($post->post_title);
-            if( stripos("/{$search}/", $myquery) !== false) {
-           // $results[] = array(
-              //  'id' => $post->ID,
-              //  'value' => $post->post_title,
-             //   'url' => get_permalink( $post->ID )
-           // );
-//echo $post->post_title;?>
-            <li><a href=""><?= $post->post_title; ?></a></li>
-       <?php }
-        }
-        echo '</ul>';
-        wp_reset_postdata();
-    }
-    die();*/
-
 
     $the_query = new WP_Query(
         array(
         'posts_per_page' => -1,
         's' => esc_attr( $_POST['keyword'] ),
         'post_type'   => 'movie' )
-    ); //echo $_POST['keyword'];
+    );
     if( $the_query->have_posts() ) :
         echo '<ul>';
         while( $the_query->have_posts() ): $the_query->the_post();
@@ -87,7 +57,9 @@ function data_fetch(){
 
             }
             endwhile;
-        echo '</ul>';
+        echo '</ul>';?>
+        <ul><li><a class="search-link" href="/search/?search=<?= esc_attr( $_POST["keyword"] )?>">Все результаты ></a></li></ul>
+    <?php
         wp_reset_postdata();
     else: ?>
         <ul><li>Ничего не найдено</li></ul>

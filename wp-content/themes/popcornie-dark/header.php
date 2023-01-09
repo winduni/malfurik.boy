@@ -41,7 +41,7 @@
     <link href="<?php echo esc_url(get_template_directory_uri()); ?>/css/engine.css" type="text/css" rel="stylesheet" />
     <link href="<?php echo esc_url(get_template_directory_uri()); ?>/css/fontawesome.css" type="text/css" rel="stylesheet" />
     <link href="<?php echo esc_url(get_template_directory_uri()); ?>/css-custom/plyr.css" type="text/css" rel="stylesheet" />
-    <link href="<?php echo esc_url(get_template_directory_uri()); ?>/css-custom/sda.css?ver=1.20" type="text/css" rel="stylesheet" />
+    <link href="<?php echo esc_url(get_template_directory_uri()); ?>/css-custom/sda.css?ver=1.21" type="text/css" rel="stylesheet" />
 </head>
 
 <body id="pmovie">

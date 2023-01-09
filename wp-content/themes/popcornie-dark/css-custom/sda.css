@@ -104,3 +104,6 @@
 .timecode_parent > div{
     margin-right:20px;
 }
+a.search-link{
+    text-decoration: underline;
+}

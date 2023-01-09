@@ -59,25 +59,7 @@
         'value_remember' => false
     );
     wp_login_form( $args );?>
-            <?php /*<div class="login__row">
-                <div class="login__caption">Логин:</div>
-                <div class="login__input"><input type="text" name="login_name" id="login_name" placeholder="Ваш логин"/></div>
-                <span class="fal fa-user"></span>
-            </div>
-            <div class="login__row">
-                <div class="login__caption">Пароль: <a href="/wp-login.php?action=lostpassword">Забыли пароль?</a></div>
-                <div class="login__input"><input type="password" name="login_password" id="login_password" placeholder="Ваш пароль" /></div>
-                <span class="fal fa-lock"></span>
-            </div>
-            <label class="login__row checkbox" for="login_not_save">
-                <input type="checkbox" name="login_not_save" id="login_not_save" value="1"/>
-                <span>Не запоминать меня</span>
-            </label>
-            <div class="login__row">
-                <button onclick="submit();" type="submit" title="Вход">Войти на сайт</button>
-                <input name="login" type="hidden" id="login" value="submit" />
-            </div>*/?>
-        </div>
+       </div>
 
 
 
