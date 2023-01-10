@@ -107,3 +107,7 @@
 a.search-link{
     text-decoration: underline;
 }
+.poster.grid-item .has-overlay__mask{
+    display: flex;
+    flex-direction: column;
+}

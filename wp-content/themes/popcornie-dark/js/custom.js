@@ -3,7 +3,7 @@ $(document).ready(function () {
     // ИНИЦИАЛИЗАЦИЯ ПЛЕЕРА
     const player = new Plyr('#player', {
         invertTime: false,
-        // debug: true,
+         //debug: true,
         seekTime: 1,
         controls: [
             'play-large', // The large play button in the center
@@ -22,24 +22,36 @@ $(document).ready(function () {
             'airplay', // Airplay (currently Safari only)
             //'download', // Show a download button with a link to either the current source or a custom URL you specify in your options
             'fullscreen' // Toggle fullscreen
-        ]
+        ],
         //  duration:true
-        // keyboard: { focused: true, global: false }
+
+         keyboard: { focused: true, global: true }
     });
+
+
+    $(window).bind('beforeunload', function(){
+        $.cookie("current_time", player.currentTime);
+
+    });
+    var cookieValue = $.cookie("current_time");
+    console.log(cookieValue);
+
 
     // ПЕРЕКЛЮЧЕНИЕ ПО ТАЙМКОДУ
     $('.timecode').click(function () {
         let timecode = $(this).attr('data-timecode');
         player.currentTime = parseInt(timecode);
+        //$('.plyr__controls').trigger( "click" );
 
     });
 
     // ОБРАБОТКА ПРОБЕЛА для всей странцы кроме поля коммента
     window.addEventListener('keydown', (e) => {
-        if (e.keyCode === 32 && e.target === document.body) {
+        if (e.keyCode === 32 && e.target === document.body) { // 37 39
             e.preventDefault();
         }
     });
+
     (function () {
         var isCommenting;
         $(document).on('blur', '.ql-editor', function (event) {
@@ -67,6 +79,16 @@ $(document).ready(function () {
                     player.play();
                 }
 
+
+            }
+            if (iz.keyCode == '39' && !isCommenting) {
+               console.log(123);
+                player.forward("1");
+
+            }
+            if (iz.keyCode == '37' && !isCommenting) {
+                console.log(456);
+                player.rewind("-1");
 
             }
         };

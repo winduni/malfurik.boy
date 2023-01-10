@@ -68,7 +68,7 @@
 <script src="<?php echo esc_url(get_template_directory_uri()); ?>/js/jquery-3.6.1.min.js"></script>
 <script src="<?php echo esc_url(get_template_directory_uri()); ?>/js/libs.js?ver=1.351"></script>
 <script src="<?php echo esc_url(get_template_directory_uri()); ?>/js/plyr.js"></script>
-<script src="<?php echo esc_url(get_template_directory_uri()); ?>/js/custom.js?ver=1.24"></script>
+<script src="<?php echo esc_url(get_template_directory_uri()); ?>/js/custom.js?ver=1.299"></script>
 
 <?php wp_footer(); ?>
 

@@ -68,7 +68,9 @@ $term = get_queried_object();
 
                                 <?/* <div class="poster__label">ITunes</div>*/?>
                                 <div class="poster__rating rating-<?php  if (function_exists('themeum_wp_rating')) { echo themeum_wp_rating(get_the_ID(),'single'); } ?>">  <?php  if (function_exists('themeum_wp_rating')) { echo themeum_wp_rating(get_the_ID(),'single'); } ?></div>
-                                <div class="has-overlay__mask btn-icon anim"><span class="fal fa-play"></span></div>
+                                <div class="has-overlay__mask btn-icon anim"><span class="fal fa-play"></span>
+                                    <?= pvc_post_views( get_the_ID(), false );  ?>
+                                </div>
                             </div>
                             <div class="poster__desc">
                                 <h3 class="poster__title ws-nowrap"><?=the_title();?></h3>
